@@ -7,7 +7,7 @@ from checkUrl import checkUrl
 class Scraper:
     def __init__(self, url):
         wild_mode = checkUrl(url)
-        print("using wild_mode", wild_mode)
+        # print("using wild_mode", wild_mode)
         # todo: run regex to check if the input url is in the predefined supported sites
         result = scrape_me(url, wild_mode=wild_mode)
 
@@ -27,4 +27,3 @@ url = sys.argv[1]
 # result = Scraper(url, wild_mode)
 result = Scraper(url)
 print(json.dumps(vars(result)))
-# print(json.dumps(vars(result), sort_keys=True, indent=4))
