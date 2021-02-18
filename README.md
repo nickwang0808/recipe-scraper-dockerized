@@ -4,4 +4,4 @@ This is a implementation of the lib `recipe-scrapers`, in-order to use the scrip
 
 ## Usage
 
-simply call `docker run <name> <url>` to return the parsing result, the script automatically determins if it needs to use wild_mode based on the url
+simply call `docker run <name> <url>` to return the parsing result, the script automatically determins if it needs to use wild_mode based on the url.
