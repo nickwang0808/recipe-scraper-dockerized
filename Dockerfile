@@ -18,5 +18,7 @@ COPY . /app
 RUN useradd appuser && chown -R appuser /app
 USER appuser
 
+# ENV FLASK_APP=src/app.py
+EXPOSE 5000
 # During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
-ENTRYPOINT ["python", "src/index.py"]
+ENTRYPOINT ["python", "src/app.py"]
