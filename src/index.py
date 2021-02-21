@@ -2,6 +2,7 @@ import sys
 from recipe_scrapers import scrape_me
 import json
 from checkUrl import checkUrl
+from flask import Flask, request
 
 
 class Scraper:
@@ -22,8 +23,12 @@ class Scraper:
         # self.nutrients = result.nutrients()
 
 
-url = sys.argv[1]
-# wild_mode = sys.argv[2]
-# result = Scraper(url, wild_mode)
-result = Scraper(url)
-print(json.dumps(vars(result)))
+app = Flask(__name__)
+
+
+@app.route('/', methods=["POST"])
+def main():
+    data = request.get_json()
+    print(data)
+    result = Scraper(data['url'])
+    return vars(result)
