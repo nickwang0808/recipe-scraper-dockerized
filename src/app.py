@@ -12,11 +12,13 @@ class Scraper:
         # todo: run regex to check if the input url is in the predefined supported sites
         result = scrape_me(url, wild_mode=wild_mode)
 
+        instructions = result.instructions().splitlines()
+
         self.title = result.title()
         self.total_time = result.total_time()
         self.yields = result.yields()
         self.ingredients = result.ingredients()
-        self.instructions = result.instructions()
+        self.instructions = instructions
         self.image = result.image()
         # self.host = result.host()
         # self.links = result.links()
